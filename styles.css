@@ -1,0 +1,43 @@
+.layout{
+    display: grid;
+    grid-template-rows: 1fr 4fr 1fr;
+  
+    width: 100vw;
+    height: 100vh;
+ 
+    
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.gameContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameBoard{
+    
+    display: grid;
+    width: 600px;
+    height: 600px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+
+}
+
+
+.box{
+    border-style: solid;
+    border-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+}
