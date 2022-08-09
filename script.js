@@ -1,8 +1,9 @@
-//going to create the player class first
-// has the property of turn status to determine if the us
+//player will be assigned an X or an O so we can check who wins
 class Player {
-    constructor(turnStatus){
+    constructor(turnStatus,name,piece){
         this.turnStatus = turnStatus
+        this.name = name
+        this.piece = piece
     }
     playTurn = function() {
         
@@ -23,29 +24,30 @@ class gameBoard{
 
 let board = new gameBoard();
 
-//let position = box.getAttribute('data-index');
-//this is how you would select the attribute of the box, might be useful later
-/*
 
-box.addEventListener("click", playTurn);
-*/
-let box = document.querySelector(".box");
-function playTurn() {
-   
-    let position = box.getAttribute('data-index');
-    box.innerHTML = "test"
-  }
+// 1* creating the X and O attached to the class
+const xMark = document.createElement('div');
+xMark.textContent = 'x'
 
-/*
-function playTurn(){
-    let first = document.querySelector(".box");
-    let test = first.getAttribute('data-index');
-    first.innerHTML = test
+
+
+//this function is the event listener for checking things
+// 1.)
+// 2.) 
+const boxes = document.querySelectorAll('.box');
+for (const box of boxes) {
+    box.addEventListener('click',function placeMark() {
+        //finding the index value to add to the array of the gameboard
+        let arrayVal = box.getAttribute('data-index');
+        let newArrayVal = parseInt(arrayVal)
+        board.array.splice(newArrayVal,1,'x')
+        box.innerHTML = 'x'
+
+    });
+
 }
-*/
 
 
 
-
-// onclick function for box class
-// generates it with a "O"
+// i think i can individually set the turn status for both of the people playing the game
+// 
