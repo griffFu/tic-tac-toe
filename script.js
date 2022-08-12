@@ -49,13 +49,15 @@ let player2 = new Player(false,"yeet","O")
 // 1.)
 // 2.) 
 const boxes = document.querySelectorAll('.box');
+let gameOver = false;
 for (const box of boxes) {
+    
     box.addEventListener('click',function placeMark() {
         //index value given
         let arrayVal = box.getAttribute('data-index');
         let newArrayVal = parseInt(arrayVal)
         
-
+        if (gameOver == false){
         if (player1.turnStatus){
             box.innerHTML = player1.piece;
             board.array.splice(newArrayVal,1,player1.piece)
@@ -71,12 +73,14 @@ for (const box of boxes) {
         }
         if (checkXWin()){
             console.log("x wins")
-            box.removeEventListener('click',placeMark,true)
+            gameOver = true;
+
         }
         if (checkOWin()){
             console.log("O wins")
+            gameOver = true;
         }
-        
+    }
         
      
 
