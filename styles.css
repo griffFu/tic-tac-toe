@@ -1,3 +1,10 @@
+@import url();
+
+html,body{
+    margin: 0px;
+}
+
+
 .layout{
     display: grid;
     grid-template-rows: 1fr 4fr 1fr;
@@ -8,12 +15,16 @@
     
 }
 
+
 .header{
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    font-size: 3rem;
+    padding: 40px;
+    background-color: bisque;
 }
+
 
 .gameContainer{
     display: flex;
@@ -21,11 +32,12 @@
     align-items: center;
 }
 
+
 .gameBoard{
     
     display: grid;
-    width: 600px;
-    height: 600px;
+    width: 300px;
+    height: 300px;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(3,1fr);
 
@@ -38,14 +50,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
-    width: 200px;
+    height: 100px;
+    width: 100px;
 }
-
-
 
 
 .boxValues{
     font-size: 40px;
     font-weight: bold;
+}
+
+.top{
+    border-top:none;
+}
+
+.left{
+    border-left: none;
+}
+
+.right{
+    border-right: none;
+}
+
+.bottom{
+    border-bottom: none;
 }

@@ -116,3 +116,4 @@ function checkOWin(){
 
 
 
+// make X and O 
