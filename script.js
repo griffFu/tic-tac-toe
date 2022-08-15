@@ -49,6 +49,7 @@ let player2 = new Player(false,"yeet","O")
 // 1.)
 // 2.) 
 const boxes = document.querySelectorAll('.box');
+let scoreDisplay = document.querySelector('.scoreBoard')
 let gameOver = false;
 for (const box of boxes) {
     
@@ -72,12 +73,12 @@ for (const box of boxes) {
             player2.turnStatus = false;
         }
         if (checkXWin()){
-            console.log("x wins")
+            scoreDisplay.innerHTML = "Player X wins"
             gameOver = true;
 
         }
         if (checkOWin()){
-            console.log("O wins")
+            scoreDisplay.innerHTML = "Player O wins"
             gameOver = true;
         }
     }

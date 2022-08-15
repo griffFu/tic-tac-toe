@@ -7,24 +7,37 @@ html,body{
 
 .layout{
     display: grid;
-    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-rows: 1fr 1fr 6fr 1fr;
   
     width: 100vw;
     height: 100vh;
  
     
 }
-
+.header,.scoreBoard{
+    color:#797B84
+}
 
 .header{
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 3rem;
-    padding: 40px;
-    background-color: bisque;
+    padding: 10px;
+    background-color:#EDBBB4;
 }
 
+.scoreBoard,.gameContainer,.restart{
+    background-color: #EDD2E0;
+
+}
+
+.scoreBoard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:2rem;
+}
 
 .gameContainer{
     display: flex;
@@ -43,10 +56,10 @@ html,body{
 
 }
 
-
 .box{
     border-style: solid;
-    border-color: black;
+    border-color: #797B84;
+    color: #BAA1A7;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,4 +87,11 @@ html,body{
 
 .bottom{
     border-bottom: none;
+}
+
+
+.restart{
+    display: Flex;
+    justify-content: center;
+    align-items: center;
 }
