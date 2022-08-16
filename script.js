@@ -49,22 +49,37 @@ let player2 = new Player(false,"yeet","O")
 // 1.)
 // 2.) 
 const boxes = document.querySelectorAll('.box');
-let scoreDisplay = document.querySelector('.scoreBoard')
+let scoreDisplay = document.querySelector('.scoreBoard');
+
 let gameOver = false;
+let arrayCounter = 0;
+
 for (const box of boxes) {
     
     box.addEventListener('click',function placeMark() {
         //index value given
         let arrayVal = box.getAttribute('data-index');
         let newArrayVal = parseInt(arrayVal)
+        arrayCounter ++
         
+
+        if (arrayCounter == 9){
+            gameOver = true;
+            scoreDisplay.innerHTML = "It is a draw!"
+            if (player1.turnStatus){
+                box.innerHTML = player1.piece;
+            }
+            if (player2.turnStatus){
+                box.innerHTML = player1.piece;
+            }
+            
+        }
         if (gameOver == false){
         if (player1.turnStatus){
             box.innerHTML = player1.piece;
             board.array.splice(newArrayVal,1,player1.piece)
             player1.turnStatus = false;
             player2.turnStatus = true;
-
         }
         else {
             box.innerHTML = player2.piece;
@@ -81,6 +96,8 @@ for (const box of boxes) {
             scoreDisplay.innerHTML = "Player O wins"
             gameOver = true;
         }
+
+       
     }
         
      
